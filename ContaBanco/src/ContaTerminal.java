@@ -41,7 +41,8 @@ double saldo  = min + (max - min) * random.nextDouble();
 
      //TODO Exibir mensagem da conta criada
 
-        System.out.println("Hello, "+ nomeCliente + " . Thank you for creating you Old Bank account!\n Your branch is : "+ agencia +  " and your account number is "+ numero +  ".\nYour account ballance ( "+saldo+" ) is ready for withdrawal. ");
+        System.out.println("\nHello, "+ nomeCliente + " . Thank you for creating you Old Bank account!\n Your branch is : "+ agencia +  " and your account number is "+ numero +" . ");
+        System.out.printf("Your account ballance ( %.2f ) is ready for withdrawal." , saldo);
 
 
     }
