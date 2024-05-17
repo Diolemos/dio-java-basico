@@ -5,11 +5,16 @@ import java.time.format.DateTimeFormatter;
 
 public class Cliente {
     public String nome;
-    public Integer cpf;
+    public String cpf;
     public LocalDate dataNascimento;
+    public Integer agencia;
 
-    public Cliente(String nome, String dataNascimento) {
+    public Cliente(String nome, String dataNascimento, String cpf,  Integer agencia) {
         setNome(nome);
+        this.agencia = agencia;
+        setCpf(cpf);
+        setDataNascimento(dataNascimento);
+
 
     }
 
@@ -25,16 +30,15 @@ public class Cliente {
         return this.nome;
     }
 
-    public void setCpf(Integer cpf) {
-        String cpfString = cpf.toString();
-        if (cpfString.length() != 11) {
+    public void setCpf(String cpf) {
+        if (cpf.length() != 11) {
             throw new IllegalArgumentException("CPF precisa ter 11 dígitos");
         } else {
             this.cpf = cpf;
         }
     }
 
-    public Integer getCPF() {
+    public String getCPF() {
         return this.cpf;
     }
 
@@ -53,4 +57,22 @@ public class Cliente {
     public LocalDate getDataNascimento(){
         return this.dataNascimento;
     }
+
+    public void setAgencia(Integer agencia){
+        this.agencia = agencia;
+    }
+    public Integer getAgencia(){
+        return this.agencia;
+    }
+
+    @Override
+    public String toString() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        return "Cliente{" +
+                "nome='" + nome + '\'' +
+                ", dataNascimento=" + dataNascimento +
+                ", agencia=" + agencia +
+                '}';
+    }
+
 }
