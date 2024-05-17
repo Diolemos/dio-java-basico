@@ -3,11 +3,16 @@ package Cliente;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import Conta.ContaPoupanca;
+import Conta.ContaCorrente;
+
 public class Cliente {
-    public String nome;
-    public String cpf;
-    public LocalDate dataNascimento;
-    public Integer agencia;
+    private  String nome;
+    private  String cpf;
+    private  LocalDate dataNascimento;
+    private Integer agencia;
+    private ContaPoupanca contaPoupanca = new ContaPoupanca();
+    private ContaCorrente contaCorrente = new ContaCorrente();
 
     public Cliente(String nome, String dataNascimento, String cpf,  Integer agencia) {
         setNome(nome);
@@ -65,9 +70,19 @@ public class Cliente {
         return this.agencia;
     }
 
+    public ContaCorrente getContaCorrente() {
+        return contaCorrente;
+    }
+
+    public ContaPoupanca geContaPoupanca(){
+        return contaPoupanca;
+    }
+
+    
+
     @Override
     public String toString() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        
         return "Cliente{" +
                 "nome='" + nome + '\'' +
                 ", dataNascimento=" + dataNascimento +

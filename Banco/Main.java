@@ -1,3 +1,5 @@
+import javax.xml.crypto.dsig.spec.ExcC14NParameterSpec;
+
 import Banco.Banco;
 import Cliente.Cliente;
 
@@ -16,6 +18,13 @@ public class Main{
 
         Santander.getClientes();
         System.out.println(Santander);
+
+        EnzoSampaio.geContaPoupanca().getNumeroConta();
+        EnzoSampaio.getContaCorrente().depositar(2500);
+    System.out.println("O saldo de Enzo Sampaio é " +  EnzoSampaio.getContaCorrente().getSaldo());   
+        EnzoSampaio.getContaCorrente().sacar(800.00);
+        System.out.println("O saldo de Enzo Sampaio é " +  EnzoSampaio.getContaCorrente().getSaldo());   
+
 
 
 
